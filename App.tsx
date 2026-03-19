@@ -144,7 +144,7 @@ const App: React.FC = () => {
             <Video size={14} className="text-white" />
           </div>
           <p className="text-[10px] sm:text-xs md:text-sm font-display font-black tracking-wide uppercase whitespace-nowrap">
-            Mua tài khoản <span className="text-yellow-300">CAPCUT PRO</span> liên hệ Zalo <span className="bg-white text-indigo-700 px-2 py-0.5 rounded-full ml-1">Nam 0981.028.794</span>
+            Mua tài khoản <span className="text-yellow-300">CAPCUT PRO</span> liên hệ Zalo <span className="bg-white text-indigo-700 px-2 py-0.5 rounded-full ml-1">Nam 098.102.8794</span>
           </p>
           <div className="hidden md:flex items-center gap-1 bg-black/20 px-2 py-0.5 rounded-full text-[10px] font-bold border border-white/10">
             <Bolt size={10} className="text-yellow-400" />
