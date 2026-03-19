@@ -134,9 +134,28 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="h-screen font-body text-gray-800 flex overflow-hidden bg-slate-50">
+    <div className="h-screen font-body text-gray-800 flex flex-col overflow-hidden bg-slate-50">
       
-      {/* --- DESKTOP SIDEBAR --- */}
+      {/* --- PROMOTIONAL BANNER --- */}
+      <div className="flex-none h-10 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-2 px-4 relative overflow-hidden shadow-md z-[110]">
+        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="max-w-7xl mx-auto h-full flex items-center justify-center gap-3 relative z-10">
+          <div className="bg-white/20 p-1 rounded-lg animate-pulse">
+            <Video size={14} className="text-white" />
+          </div>
+          <p className="text-[10px] sm:text-xs md:text-sm font-display font-black tracking-wide uppercase whitespace-nowrap">
+            Mua tài khoản <span className="text-yellow-300">CAPCUT PRO</span> liên hệ Zalo <span className="bg-white text-indigo-700 px-2 py-0.5 rounded-full ml-1">Nam 0981.028.794</span>
+          </p>
+          <div className="hidden md:flex items-center gap-1 bg-black/20 px-2 py-0.5 rounded-full text-[10px] font-bold border border-white/10">
+            <Bolt size={10} className="text-yellow-400" />
+            <span>GIÁ RẺ - UY TÍN</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex-1 flex overflow-hidden relative">
+        
+        {/* --- DESKTOP SIDEBAR --- */}
       <aside 
         className={`hidden lg:flex flex-col bg-white border-r border-slate-200 transition-all duration-300 relative z-30 shadow-xl
         ${isSidebarOpen ? 'w-72' : 'w-20'}`}
@@ -192,7 +211,7 @@ const App: React.FC = () => {
       </aside>
 
       {/* --- MOBILE HEADER & MENU --- */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-slate-200 z-[100] flex items-center justify-between px-4 shadow-sm">
+      <div className="lg:hidden fixed top-10 left-0 right-0 h-16 bg-white border-b border-slate-200 z-[100] flex items-center justify-between px-4 shadow-sm">
          <div className="flex items-center gap-2">
             <div className="bg-orange-500 p-1.5 rounded-lg shadow-sm">
               <Sparkles className="text-white w-5 h-5" />
@@ -209,7 +228,7 @@ const App: React.FC = () => {
 
       {/* MOBILE MENU OVERLAY - Tối ưu hóa Z-Index và Blur */}
       <div className={`lg:hidden fixed inset-0 z-[90] bg-white transition-all duration-300 ease-in-out transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-           <nav className="p-6 pt-24 space-y-3 h-full overflow-y-auto overscroll-contain">
+           <nav className="p-6 pt-32 space-y-3 h-full overflow-y-auto overscroll-contain">
               {menuItems.map((item) => {
                 const ItemIcon = item.icon;
                 const isActive = activeTab === item.id;
@@ -241,7 +260,7 @@ const App: React.FC = () => {
       </div>
 
       {/* --- MAIN CONTENT AREA --- */}
-      <main className="flex-1 flex flex-col relative overflow-hidden bg-slate-50 h-full pt-16 lg:pt-0">
+      <main className="flex-1 flex flex-col relative overflow-hidden bg-slate-50 h-full pt-[104px] lg:pt-0">
         
         {/* Dynamic Page Header */}
         <header className="flex-none bg-white border-b border-slate-200 px-4 lg:px-6 py-3 lg:py-4 flex items-center justify-between z-20">
@@ -375,6 +394,7 @@ const App: React.FC = () => {
             {activeTab === 'vision_scanner' && <div className="h-full overflow-y-auto p-4 custom-scrollbar overscroll-contain"><VisionScanner /></div>}
         </div>
       </main>
+    </div>
     </div>
   );
 };
